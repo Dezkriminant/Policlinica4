@@ -34,22 +34,28 @@ sealed class Program
                 s.AddTransient<AdminWindowView>();
                 s.AddTransient<AdminWindowViewModel>();
                 
-                //Репозитории
-                s.AddTransient<DoctorRepository>();
-                s.AddTransient<UserRepository>();
-                
                 s.AddTransient<RegistrationViewModel>();
                 s.AddTransient<RegistrationView>();
                 
                 s.AddTransient<StartViewModel>();
                 s.AddTransient<Startview>();
-
+                
+                 s.AddTransient<Records>();
+                 s.AddTransient<RecordViewModel>();
+                 
+                 s.AddTransient<ServiceWindow>();
+                 s.AddTransient<ServiceViewModel>();
+                 
+                //Репозитории
+                s.AddTransient<DoctorRepository>();
+                
+                s.AddTransient<UserRepository>();
+                
+                s.AddTransient<ServiceRepository>();
+                
                 s.AddTransient<RecordRep>();
                 
                 s.AddSingleton<Navigation>();
-                
-                s.AddTransient<Records>();
-                s.AddTransient<RecordViewModel>();
             }).
             Build();
         BuildAvaloniaApp(host.Services)

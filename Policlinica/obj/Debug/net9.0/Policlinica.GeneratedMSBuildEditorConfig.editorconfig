@@ -43,5 +43,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/artem/RiderProjects/Policlinica1/Policlinica/Views/RegistrationView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/artem/RiderProjects/Policlinica1/Policlinica/Views/ServiceWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/artem/RiderProjects/Policlinica1/Policlinica/Views/StartView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
