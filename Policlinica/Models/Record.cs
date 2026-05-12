@@ -14,10 +14,13 @@ public class Record
     
     public int UserId { get; set; }
     
+    public int ServiceId { get; set; }
+    
     public decimal TotalAmount { get; set; }
     
     public DateTime RecordDate { get; set; }
     
     public string Title { get; set; }
     public string Name { get; set; }
+    public string ServiceName { get; set; }
 }

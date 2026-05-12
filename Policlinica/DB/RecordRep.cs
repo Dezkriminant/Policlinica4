@@ -16,10 +16,11 @@ public class RecordRep:BaseRep
     {
         List<Record> recordsList = new();
 
-        string sql = @"select r.id,r.client_name, r.client_surname,r.doctor_id,user_id,r.total_amount,r.record_date,d.title,u.name 
-                       from records r 
+        string sql = @"select r.id,r.client_name, r.client_surname,r.doctor_id,r.user_id,r.total_amount,r.record_date,r.service_id,d.title,u.name,s.service_name
+                       from records r
                        join doctors d on r.doctor_id = d.id 
-                       join users u  on r.user_id  = u.id ";
+                       join users u  on r.user_id  = u.id 
+                       join services s on r.service_id = s.id";
         try
         {
             using (var mc = new MySqlCommand(sql, connection))
@@ -35,10 +36,12 @@ public class RecordRep:BaseRep
                             ClientSurname = reader.GetString("client_surname"),
                             DoctorId = reader.GetInt32("doctor_id"),
                             UserId = reader.GetInt32("user_id"),
+                            ServiceId = reader.GetInt32("service_id"),
                             TotalAmount = reader.GetInt32("total_amount"),
                             RecordDate = reader.GetDateTime("record_date"),
                             Name = reader.GetString("name"),
-                            Title =  reader.GetString("title")
+                            Title =  reader.GetString("title"),
+                            ServiceName = reader.GetString("service_name")
                         });
                     }
                 }
