@@ -15,9 +15,6 @@ public partial class AdminWindowViewModel : ViewModelBase
     private readonly Navigation _navigation;
     private readonly IServiceProvider _provider;
     private readonly RecordRep _recordRep;
-    [ObservableProperty] private string _password;
-    [ObservableProperty] private string _login;
-    [ObservableProperty] public string _eror;
     [ObservableProperty] ObservableCollection<Record>  _recordsList = new();
     [ObservableProperty] private Record _selectedRecord;
 

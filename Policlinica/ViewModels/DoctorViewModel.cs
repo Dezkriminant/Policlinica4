@@ -16,12 +16,13 @@ public partial class DoctorViewModel : ViewModelBase
     [ObservableProperty] string name;
     [ObservableProperty] List<Doctor> _doctorList;
     [ObservableProperty] Doctor selectedDoctor;
-    [ObservableProperty] string g;
+   // [ObservableProperty] string g;
 
-    public DoctorViewModel(IServiceProvider provider, DoctorRepository repository)
+    public DoctorViewModel(IServiceProvider provider, DoctorRepository repository, Navigation navigation)
     {
         _provider = provider;
         _doctorList = repository.GetDoctorsByTest();
+        _navigation = navigation;
     }
 
     [RelayCommand]

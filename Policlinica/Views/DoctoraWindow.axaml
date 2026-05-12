@@ -6,6 +6,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Policlinica.Views.DoctoraWindow"
         x:DataType="vm:DoctorViewModel">
+    
+    <Border BorderBrush="Aqua" CornerRadius="8"  BorderThickness="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"> 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         
         <TextBlock Text="Создание заказа" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
@@ -16,13 +18,12 @@
         <TextBlock Text="Введите Фамилию" />
         <TextBox Text="{Binding Username}"/>
         
-       <!--> <TextBox Text="{Binding g}"/><!-->
+        <!--> <TextBox Text="{Binding g}"/> <!-->
         <ComboBox ItemsSource="{Binding DoctorList}"
                   SelectedItem="{Binding SelectedDoctor}"
                   DisplayMemberBinding="{Binding Title}"/>
         <Button Content="Далее" 
                 Command="{Binding StartTestCommand}"/>
-        
     </StackPanel>
-
+    </Border>
 </UserControl>

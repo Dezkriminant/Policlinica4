@@ -12,15 +12,16 @@ namespace Policlinica.ViewModels;
 
 public partial class ServiceViewModel : ViewModelBase
 {
-    
+
     private readonly IServiceProvider _provider;
     private readonly Navigation _navigation;
     [ObservableProperty] List<ServiceSelected> _services;
     ServiceRepository _serviceRepository;
     [ObservableProperty] string _login;
     [ObservableProperty] Doctor _selectedDoctor;
-    
-    public ServiceViewModel(IServiceProvider provider, Navigation navigation,Doctor selectedDoctor, ServiceRepository repository)
+
+    public ServiceViewModel(IServiceProvider provider, Navigation navigation, Doctor selectedDoctor,
+        ServiceRepository repository)
     {
         _provider = provider;
         _navigation = navigation;
@@ -57,5 +58,6 @@ public partial class ServiceViewModel : ViewModelBase
            // close();
         }
 
+        }
+
     }
-}
