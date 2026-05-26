@@ -65,6 +65,14 @@
                           Padding="12" FontSize="14" Background="White" Foreground="Black"/>
             </StackPanel>
 
+            <!-- Кабинет -->
+            <StackPanel Spacing="8">
+                <TextBlock Text="Кабинет:" FontWeight="Bold" Foreground="Black" FontSize="14"/>
+                <Border Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="1" Padding="12" CornerRadius="3">
+                    <TextBlock Text="{Binding EditCabinet}" FontSize="14" Foreground="Black"/>
+                </Border>
+            </StackPanel>
+
             <!-- Услуги (CheckBox) -->
             <StackPanel Spacing="8">
                 <TextBlock Text="Услуги:" FontWeight="Bold" Foreground="Black" FontSize="14"/>

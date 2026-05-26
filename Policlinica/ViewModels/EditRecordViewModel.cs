@@ -53,6 +53,7 @@ public partial class EditRecordViewModel : ViewModelBase
     [ObservableProperty] Hospital editSelectedHospital;
     [ObservableProperty] ObservableCollection<Doctor> doctorList = new();
     [ObservableProperty] Doctor editSelectedDoctor;
+    [ObservableProperty] string editCabinet = "";
     [ObservableProperty] ObservableCollection<ServiceWithSelected> editServiceList = new();
     [ObservableProperty] DateTime editRecordDate = DateTime.Now;
     [ObservableProperty] ObservableCollection<string> availableTimes = new();
@@ -85,6 +86,7 @@ public partial class EditRecordViewModel : ViewModelBase
         EditClientName = record.ClientName;
         EditClientSurname = record.ClientSurname;
         EditPhoneNumber = record.PhoneNumber;
+        EditCabinet = record.Cabinet;
         EditRecordDate = record.RecordDate;
         if (!string.IsNullOrEmpty(record.AppointmentTime))
         {
@@ -113,6 +115,9 @@ public partial class EditRecordViewModel : ViewModelBase
     {
         if (value != null)
         {
+            // Обновляем кабинет
+            EditCabinet = value.Cabinet;
+
             var services = _serviceRepository.GetServicesByDoctors(value.Id);
             EditServiceList.Clear();
             foreach (var service in services)
@@ -222,6 +227,7 @@ public partial class EditRecordViewModel : ViewModelBase
             _record.PhoneNumber = EditPhoneNumber;
             _record.DoctorId = EditSelectedDoctor.Id;
             _record.HospitalId = EditSelectedHospital.Id;
+            _record.Cabinet = EditCabinet;
             _record.AppointmentTime = EditSelectedTime;
             _record.TotalAmount = EditTotalAmount;
             _record.RecordDate = EditRecordDate;
@@ -229,10 +235,8 @@ public partial class EditRecordViewModel : ViewModelBase
             bool updated = _recordRep.UpdateRecord(_record);
             if (updated)
             {
-                // Удаляем старые услуги
                 _recordItemsRepository.DeleteByRecordId(_record.Id);
 
-                // Добавляем новые услуги
                 foreach (var service in selectedServices)
                 {
                     _recordItemsRepository.InsertRecordItem(new RecordItem
