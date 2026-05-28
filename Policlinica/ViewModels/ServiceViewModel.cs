@@ -87,7 +87,6 @@ public partial class ServiceViewModel : ViewModelBase
     [RelayCommand]
     public void GoBack()
     {
-        // Если выбрана больница, вернуться в DoctorView для этой больницы
         if (_selectedHospital != null)
         {
             var vm = ActivatorUtilities.CreateInstance<DoctorViewModel>(_provider, _selectedHospital);
@@ -95,7 +94,6 @@ public partial class ServiceViewModel : ViewModelBase
         }
         else
         {
-            // Иначе вернуться в HospitalView
             var vm = ActivatorUtilities.CreateInstance<HospitalViewModel>(_provider);
             _navigation.Navigate(vm);
         }

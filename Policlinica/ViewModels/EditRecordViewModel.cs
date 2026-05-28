@@ -72,17 +72,14 @@ public partial class EditRecordViewModel : ViewModelBase
         _recordItemsRepository = recordItemsRepository;
         _hospitalRepository = hospitalRepository;
         _appointmentRepository = appointmentRepository;
-
-        // Загружаем больницы
+        
         HospitalList = new ObservableCollection<Hospital>(hospitalRepository.GetAllHospitals());
         
-        // Устанавливаем текущую больницу
         if (record.HospitalId > 0)
         {
             EditSelectedHospital = HospitalList.FirstOrDefault(h => h.Id == record.HospitalId);
         }
-
-        // Заполняем данные записи
+        
         EditClientName = record.ClientName;
         EditClientSurname = record.ClientSurname;
         EditPhoneNumber = record.PhoneNumber;
@@ -115,7 +112,6 @@ public partial class EditRecordViewModel : ViewModelBase
     {
         if (value != null)
         {
-            // Обновляем кабинет
             EditCabinet = value.Cabinet;
 
             var services = _serviceRepository.GetServicesByDoctors(value.Id);

@@ -27,7 +27,6 @@ public partial class RegistrationViewModel : ViewModelBase
 
     partial void OnPasswordChanged(string value)
     {
-        // Ограничиваем пароль до 8 символов
         if (value != null && value.Length > 8)
         {
             Password = value.Substring(0, 8);
@@ -36,7 +35,6 @@ public partial class RegistrationViewModel : ViewModelBase
 
     partial void OnLoginChanged(string value)
     {
-        // Ограничиваем логин до 15 символов
         if (value != null && value.Length > 15)
         {
             Login = value.Substring(0, 15);

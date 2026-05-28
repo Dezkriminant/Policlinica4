@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vikto\\RiderProjects\\Policlinica\\Policlinica\\Policlinica.csproj": {}
+    "C:\\Users\\vikto\\RiderProjects\\Policlinica4\\Policlinica\\Policlinica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vikto\\RiderProjects\\Policlinica\\Policlinica\\Policlinica.csproj": {
+    "C:\\Users\\vikto\\RiderProjects\\Policlinica4\\Policlinica\\Policlinica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vikto\\RiderProjects\\Policlinica\\Policlinica\\Policlinica.csproj",
+        "projectUniqueName": "C:\\Users\\vikto\\RiderProjects\\Policlinica4\\Policlinica\\Policlinica.csproj",
         "projectName": "Policlinica",
-        "projectPath": "C:\\Users\\vikto\\RiderProjects\\Policlinica\\Policlinica\\Policlinica.csproj",
+        "projectPath": "C:\\Users\\vikto\\RiderProjects\\Policlinica4\\Policlinica\\Policlinica.csproj",
         "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vikto\\RiderProjects\\Policlinica\\Policlinica\\obj\\",
+        "outputPath": "C:\\Users\\vikto\\RiderProjects\\Policlinica4\\Policlinica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config"

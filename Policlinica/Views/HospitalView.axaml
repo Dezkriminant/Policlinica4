@@ -23,7 +23,6 @@
             
             <TextBlock Text="Выберите больницу" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="Black"/>
             
-            <!-- Список больниц -->
             <Border BorderBrush="LightGray" BorderThickness="1" Padding="15" CornerRadius="5">
                 <StackPanel Spacing="10">
                     <TextBlock Text="Доступные медицинские учреждения:" FontWeight="Bold" FontSize="14" Foreground="Black"/>
@@ -43,11 +42,9 @@
                     </DataGrid>
                 </StackPanel>
             </Border>
-
-            <!-- Статус -->
+            
             <TextBlock Text="{Binding StatusMessage}" Foreground="Red" FontSize="14" TextWrapping="Wrap"/>
-
-            <!-- Кнопки -->
+            
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
                 <Button Content="Продолжить" 
                         FontSize="16" 
